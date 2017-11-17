@@ -12,5 +12,7 @@ public interface LmService {
 	
 	public List<UserDAO> getStudentsByLecture(Map<String, Object> map);
 	
+	public UserDAO getTeacherFromLecture(Map<String, Object> map);
+	
 	
 }

@@ -12,14 +12,28 @@
 
 	</select>
 
-	<select id="select_students_by_lecture_id" parameterType="hashmap" 
-	resultType="kr.co.tje.dao.UserDAO">
+	<select id="select_students_by_lecture_id" parameterType="hashmap"
+		resultType="kr.co.tje.dao.UserDAO">
 
 		SELECT u.*
 		FROM lecture AS l
-		JOIN user_lecture AS ul ON ul.lecture_id = l.id
+		JOIN user_lecture AS ul ON
+		ul.lecture_id = l.id
 		JOIN users As u ON ul.user_id = u.id
-		WHERE l.id = #{ lecture_id };
+		WHERE l.id =
+		#{ lecture_id };
+
+	</select>
+
+
+	<select id="get_teacher_by_lecture_id" parameterType="hashmap"
+		resultType="kr.co.tje.dao.UserDAO">
+
+		SELECT u.*
+		FROM lecture AS l
+		JOIN user_lecture_teach AS ult ON l.id = ult.lecture_id
+		JOIN users AS u ON ult.user_id = u.id
+		WHERE l.id = #{ lid };
 
 	</select>
 

@@ -32,4 +32,16 @@ public class LmServiceImpl implements LmService {
 		return users;
 	}
 
+	@Override
+	public UserDAO getTeacherFromLecture(Map<String, Object> map) {
+
+		List<UserDAO> teacherList =  mapper.get_teacher_by_lecture_id(map);
+		UserDAO teacher = teacherList.get(0);
+		
+		return teacher;
+	}
+
 }
+
+
+

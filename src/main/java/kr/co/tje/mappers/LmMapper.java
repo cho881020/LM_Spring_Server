@@ -10,6 +10,7 @@ public interface LmMapper {
 	
 	public List<LectureDAO> select_all_lectures();
 	public List<UserDAO> select_students_by_lecture_id(Map<String, Object> map);
+	public List<UserDAO> get_teacher_by_lecture_id(Map<String, Object> map);
 	
 
 }
