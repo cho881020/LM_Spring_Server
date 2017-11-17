@@ -7,8 +7,31 @@
 
 	<select id="select_all_lectures" resultType="kr.co.tje.dao.LectureDAO">
 
-		SELECT * FROM lecture;
-	
+		SELECT * FROM
+		lecture;
+
+	</select>
+
+	<select id="select_students_by_lecture_id" parameterType="hashmap" 
+	resultType="kr.co.tje.dao.UserDAO">
+
+		SELECT u.*
+		FROM lecture AS l
+		JOIN user_lecture AS ul ON ul.lecture_id = l.id
+		JOIN users As u ON ul.user_id = u.id
+		WHERE l.id = #{ lecture_id };
+
 	</select>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+

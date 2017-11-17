@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.tje.dao.LectureDAO;
@@ -73,6 +74,29 @@ public class HomeController {
 		return resultMap;
 		
 	}
+	
+	@RequestMapping(value="/get_student_by_lecture_id")
+	@ResponseBody
+	public Map<String, Object> getStudentByLecureId(@RequestParam(value="lecture_id") int id) {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		
+		resultMap.put("result", true);
+		
+		
+//		DB에 쿼리를 날릴때 파라미터로 쓰일 Map 생성.
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("lecture_id", id);
+		
+		
+//		서버에 들어올때 클라이언트에서 동봉하는 변수들 활용
+		
+		resultMap.put("students", mService.getStudentsByLecture(params));
+		
+		
+		return resultMap;
+		
+	}
+	
 	
 }
 

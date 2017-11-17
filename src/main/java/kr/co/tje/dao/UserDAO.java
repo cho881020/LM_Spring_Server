@@ -4,7 +4,7 @@ public class UserDAO {
 	
 	private int id;
 	private String name;
-	private String birthDay;
+	private String birthday;
 	private int gender;
 	private String address;
 	private String phone;
@@ -25,10 +25,10 @@ public class UserDAO {
 		this.name = name;
 	}
 	public String getBirthDay() {
-		return birthDay;
+		return birthday;
 	}
 	public void setBirthDay(String birthDay) {
-		this.birthDay = birthDay;
+		this.birthday = birthDay;
 	}
 	public int getGender() {
 		return gender;
