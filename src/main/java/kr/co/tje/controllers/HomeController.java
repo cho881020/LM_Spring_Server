@@ -117,6 +117,39 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping(value="/insertUser")
+	@ResponseBody
+	public Map<String, Object> insertUser(@RequestParam Map<String, Object> param) {
+		
+		mService.insertUserInfo(param);
+
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("message", "사용자 확인");
+
+
+		return resultMap;
+	}
+	
+	
+	@RequestMapping(value="/add_user")
+	@ResponseBody
+	public Map<String, Object> addUser(@RequestParam Map<String, Object> params) {
+//		결과를 돌려줄 Map
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		
+//		서비스를 이용해 사용자 데이터 추가.
+		mService.insertUserData(params);
+		
+		
+		resultMap.put("message", "사용자테이블 확인해볼것");
+		
+		
+		return resultMap;
+		
+	}
+	
+	
+	
 	
 }
 

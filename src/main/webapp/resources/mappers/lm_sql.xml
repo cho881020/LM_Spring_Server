@@ -36,6 +36,23 @@
 		WHERE l.id = #{ lid };
 
 	</select>
+	
+	<insert id="insert_user" parameterType="hashmap">
+		
+		INSERT INTO users (name, birthday, gender, address, phone, height)
+		VALUES (#{name}, #{birthday}, #{gender}, #{address}, #{phone}, #{height});
+			
+	</insert>
+
+
+ 	<insert id="insert_user2" parameterType="hashmap">
+ 	
+ 		INSERT INTO users (name, birthday, gender, address, phone)
+ 		VALUES (#{name}, #{birthday}, #{gender}, #{address}, #{phone});
+ 	</insert>
+
+
+
 
 </mapper>
 

@@ -41,6 +41,21 @@ public class LmServiceImpl implements LmService {
 		return teacher;
 	}
 
+	@Override
+	public void insertUserInfo(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		mapper.insert_user(map);
+		
+	}
+
+	@Override
+	public void insertUserData(Map<String, Object> map) {
+		
+		mapper.insert_user2(map);
+		
+	}
+	
+
 }
 
 

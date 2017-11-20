@@ -14,5 +14,19 @@ public interface LmService {
 	
 	public UserDAO getTeacherFromLecture(Map<String, Object> map);
 	
+	public void insertUserInfo(Map<String, Object> map);
+	
+	public void insertUserData(Map<String, Object> map);
+	
 	
 }
+
+
+
+
+
+
+
+
+
+
